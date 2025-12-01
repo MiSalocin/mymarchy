@@ -1,3 +1,3 @@
-echo "Remove old Omarchy TUI app now that we have the Omarchy Menu"
+echo "Remove old Myarchy TUI app now that we have the Myarchy Menu"
 
-rm -f ~/.local/share/applications/omarchy.desktop
+rm -f ~/.local/share/applications/myarchy.desktop

@@ -1,9 +1,9 @@
 echo "Switching from vlc to mpv for the default video player"
-if omarchy-cmd-missing mpv; then
-  omarchy-pkg-drop vlc
+if myarchy-cmd-missing mpv; then
+  myarchy-pkg-drop vlc
   rm ~/.local/share/applications/vlc.desktop
 
-  omarchy-pkg-add mpv
+  myarchy-pkg-add mpv
   xdg-mime default mpv.desktop video/mp4
   xdg-mime default mpv.desktop video/x-msvideo
   xdg-mime default mpv.desktop video/x-matroska

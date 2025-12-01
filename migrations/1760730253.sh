@@ -1,3 +1,3 @@
-echo "Install Aether for Omarchy theme creation"
+echo "Install Aether for Myarchy theme creation"
 
-omarchy-pkg-add aether
+myarchy-pkg-add aether

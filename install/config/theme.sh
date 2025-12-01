@@ -3,19 +3,19 @@ sudo ln -snf /usr/share/icons/Adwaita/symbolic/actions/go-previous-symbolic.svg 
 sudo ln -snf /usr/share/icons/Adwaita/symbolic/actions/go-next-symbolic.svg /usr/share/icons/Yaru/scalable/actions/go-next-symbolic.svg
 
 # Setup theme links
-mkdir -p ~/.config/omarchy/themes
-for f in ~/.local/share/omarchy/themes/*; do ln -nfs "$f" ~/.config/omarchy/themes/; done
+mkdir -p ~/.config/myarchy/themes
+for f in ~/.local/share/myarchy/themes/*; do ln -nfs "$f" ~/.config/myarchy/themes/; done
 
 # Set initial theme
-mkdir -p ~/.config/omarchy/current
-ln -snf ~/.config/omarchy/themes/catppuccin ~/.config/omarchy/current/theme
-ln -snf ~/.config/omarchy/current/theme/backgrounds/1-catppuccin.png ~/.config/omarchy/current/background
+mkdir -p ~/.config/myarchy/current
+ln -snf ~/.config/myarchy/themes/catppuccin ~/.config/myarchy/current/theme
+ln -snf ~/.config/myarchy/current/theme/backgrounds/1-catppuccin.png ~/.config/myarchy/current/background
 
 # Set specific app links for current theme
-# ~/.config/omarchy/current/theme/neovim.lua -> ~/.config/nvim/lua/plugins/theme.lua is handled via omarchy-setup-nvim
+# ~/.config/myarchy/current/theme/neovim.lua -> ~/.config/nvim/lua/plugins/theme.lua is handled via myarchy-setup-nvim
 
 mkdir -p ~/.config/btop/themes
-ln -snf ~/.config/omarchy/current/theme/btop.theme ~/.config/btop/themes/current.theme
+ln -snf ~/.config/myarchy/current/theme/btop.theme ~/.config/btop/themes/current.theme
 
 mkdir -p ~/.config/mako
-ln -snf ~/.config/omarchy/current/theme/mako.ini ~/.config/mako/config
+ln -snf ~/.config/myarchy/current/theme/mako.ini ~/.config/mako/config

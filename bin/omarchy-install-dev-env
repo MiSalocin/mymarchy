@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ -z "$1" ]]; then
-  echo "Usage: omarchy-install-dev-env <ruby|node|bun|go|laravel|symfony|php|python|elixir|phoenix|rust|java|ocaml|dotnet|clojure>" >&2
+  echo "Usage: myarchy-install-dev-env <ruby|node|bun|go|laravel|symfony|php|python|elixir|phoenix|rust|java|ocaml|dotnet|clojure>" >&2
   exit 1
 fi
 
@@ -47,7 +47,7 @@ install_node() {
 case "$1" in
 ruby)
   echo -e "Installing Ruby on Rails...\n"
-  omarchy-pkg-add libyaml
+  myarchy-pkg-add libyaml
   mise use --global ruby@latest
   mise settings add idiomatic_version_file_enable_tools ruby
   echo "gem: --no-document" > ~/.gemrc
@@ -83,7 +83,7 @@ laravel)
 symfony)
   echo -e "Installing PHP and Symfony...\n"
   install_php
-  omarchy-pkg-add symfony-cli
+  myarchy-pkg-add symfony-cli
   echo -e "\nYou can now run: symfony new --webapp myproject"
   ;;
 python)
@@ -136,7 +136,7 @@ dotnet)
   ;;
 clojure)
   echo -e "Installing Clojure...\n"
-  omarchy-pkg-add rlwrap
+  myarchy-pkg-add rlwrap
   mise use --global clojure@latest
   ;;
 esac

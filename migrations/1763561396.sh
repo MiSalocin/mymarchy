@@ -1,3 +1,3 @@
-echo "Switch to stable Omarchy Package Repository builds"
+echo "Switch to stable Myarchy Package Repository builds"
 
-omarchy-refresh-pacman
+myarchy-refresh-pacman

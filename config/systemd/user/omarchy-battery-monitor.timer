@@ -1,6 +1,6 @@
 [Unit]
-Description=Omarchy Battery Monitor Timer
-Requires=omarchy-battery-monitor.service
+Description=Myarchy Battery Monitor Timer
+Requires=myarchy-battery-monitor.service
 
 [Timer]
 OnBootSec=1min

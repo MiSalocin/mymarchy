@@ -9,4 +9,4 @@ This fork is based on [jolleyDesign/lomarchy](https://github.com/jolleyDesign/lo
 
 ## License
 
-Omarchy is released under the [MIT License](https://opensource.org/licenses/MIT).
+Myarchy is released under the [MIT License](https://opensource.org/licenses/MIT).

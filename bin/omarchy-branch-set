@@ -1,14 +1,14 @@
 #!/bin/bash
 
 if (($# == 0)); then
-  echo "Usage: omarchy-branch-set [master|dev]"
+  echo "Usage: myarchy-branch-set [master|dev]"
   exit 1
 else
   branch="$1"
 fi
 
 case "$branch" in
-  "master") git -C $OMARCHY_PATH switch master ;;
-  "dev") git -C $OMARCHY_PATH switch dev ;;
+  "master") git -C $MYMARCHY_PATH switch master ;;
+  "dev") git -C $MYMARCHY_PATH switch dev ;;
   *) echo "Unknown branch: $branch"; exit 1; ;;
 esac

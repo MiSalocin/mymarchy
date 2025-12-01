@@ -1,4 +1,4 @@
-if [[ -n ${OMARCHY_ONLINE_INSTALL:-} ]]; then
+if [[ -n ${MYMARCHY_ONLINE_INSTALL:-} ]]; then
   # Install build tools
   sudo pacman -S --needed --noconfirm base-devel
 
@@ -6,7 +6,7 @@ if [[ -n ${OMARCHY_ONLINE_INSTALL:-} ]]; then
   sudo pacman-key --lsign-key 40DFB630FF42BCFFB047046CF0134EE680CAC571
 
   sudo pacman -Sy
-  sudo pacman -S --noconfirm --needed omarchy-keyring
+  sudo pacman -S --noconfirm --needed myarchy-keyring
 
 
   # Refresh all repos

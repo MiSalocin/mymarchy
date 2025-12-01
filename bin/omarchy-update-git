@@ -2,7 +2,7 @@
 
 set -e
 
-echo -e "\e[32mUpdate Omarchy\e[0m"
+echo -e "\e[32mUpdate Myarchy\e[0m"
 
-git -C $OMARCHY_PATH pull --autostash
-git -C $OMARCHY_PATH diff --check || git -C $OMARCHY_PATH reset --merge
+git -C $MYMARCHY_PATH pull --autostash
+git -C $MYMARCHY_PATH diff --check || git -C $MYMARCHY_PATH reset --merge

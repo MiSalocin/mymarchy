@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing VSCode..."
-omarchy-pkg-add visual-studio-code-bin
+myarchy-pkg-add visual-studio-code-bin
 
 mkdir -p ~/.vscode ~/.config/Code/User
 
@@ -21,7 +21,7 @@ EOF
 # Ensure VSC's own auto-update feature is turned off
 printf '{\n  "update.mode": "none"\n}\n' > ~/.config/Code/User/settings.json
 
-# Apply Omarchy theme to VSCode
-omarchy-theme-set-vscode
+# Apply Myarchy theme to VSCode
+myarchy-theme-set-vscode
 
 setsid gtk-launch code

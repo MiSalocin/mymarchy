@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# omarchy-theme-set-obsidian: Bootstrap and update Omarchy theme for Obsidian
+# myarchy-theme-set-obsidian: Bootstrap and update Myarchy theme for Obsidian
 #
-# - Ensures registry at ~/.local/state/omarchy/obsidian-vaults
+# - Ensures registry at ~/.local/state/myarchy/obsidian-vaults
 #   - Populates by extracting vault paths from ~/.config/obsidian/obsidian.json
 # - For each valid vault:
-#   - Ensures .obsidian/themes/Omarchy/{manifest.json, theme.css}
+#   - Ensures .obsidian/themes/Myarchy/{manifest.json, theme.css}
 #   - Updates theme.css (uses current theme’s obsidian.css if present; otherwise generates -- see below)
 
 # Theme automagic generation logic:
 #
-# - Background/foreground: read from ~/.config/omarchy/current/theme/alacritty.toml [colors.primary]
+# - Background/foreground: read from ~/.config/myarchy/current/theme/alacritty.toml [colors.primary]
 #   (background/foreground). Fallbacks: bg=#1a1b26, fg=#a9b1d6. Compute bg brightness for light/dark handling.
 # - Palette extraction: collect colors from Alacritty (primary/normal/bright/dim/selection), Waybar (@define-color),
 #   and Hyprland (col.*_border; rgba->hex). Normalize, dedupe, and count frequencies.
@@ -23,8 +23,8 @@
 #   If missing, background = 75% bg + 25% fg; text chosen for contrast vs selection background.
 # - Fonts: monospace from Alacritty [font] or fontconfig monospace; UI font from fontconfig sans-serif.
 
-VAULTS_FILE="$HOME/.local/state/omarchy/obsidian-vaults"
-CURRENT_THEME_DIR="$HOME/.config/omarchy/current/theme"
+VAULTS_FILE="$HOME/.local/state/myarchy/obsidian-vaults"
+CURRENT_THEME_DIR="$HOME/.config/myarchy/current/theme"
 
 ensure_vaults_file() {
   mkdir -p "$(dirname "$VAULTS_FILE")"
@@ -43,17 +43,17 @@ ensure_vaults_file() {
 # Ensure theme directory and minimal manifest exist in a vault
 ensure_theme_scaffold() {
   local vault_path="$1"
-  local theme_dir="$vault_path/.obsidian/themes/Omarchy"
+  local theme_dir="$vault_path/.obsidian/themes/Myarchy"
   mkdir -p "$theme_dir"
   if [ ! -f "$theme_dir/manifest.json" ]; then
     cat >"$theme_dir/manifest.json" <<'EOF'
 {
-  "name": "Omarchy",
+  "name": "Myarchy",
   "version": "1.0.0",
   "minAppVersion": "0.16.0",
-  "description": "Automatically syncs with your current Omarchy system theme colors and fonts",
-  "author": "Omarchy",
-  "authorUrl": "https://omarchy.org"
+  "description": "Automatically syncs with your current Myarchy system theme colors and fonts",
+  "author": "Myarchy",
+  "authorUrl": "https://myarchy.org"
 }
 EOF
   fi
@@ -409,7 +409,7 @@ extract_theme_data() {
 
   # Generate CSS with 14-slot system
   cat <<EOF
-/* Omarchy Theme for Obsidian */
+/* Myarchy Theme for Obsidian */
 /* Generated on $(date) from theme: $(basename "$(readlink "$CURRENT_THEME_DIR" 2>/dev/null || echo "unknown")") */
 /* Colors sorted by frequency, backgrounds by distance */
 
@@ -632,13 +632,13 @@ EOF
 
 # Option handling
 if [ "${1:-}" = "--reset" ]; then
-  echo "♻️  Resetting Omarchy themes and registry..."
+  echo "♻️  Resetting Myarchy themes and registry..."
   if [ -f "$VAULTS_FILE" ] && [ -s "$VAULTS_FILE" ]; then
     while IFS= read -r vault_path || [ -n "$vault_path" ]; do
       case "$vault_path" in ""|\#*) continue ;; esac
       vault_path="${vault_path%/}"
       vault_name=$(basename "$vault_path")
-      theme_dir="$vault_path/.obsidian/themes/Omarchy"
+      theme_dir="$vault_path/.obsidian/themes/Myarchy"
       if [ -d "$theme_dir" ]; then
         rm -rf "$theme_dir"
         echo "   ✅ $vault_name (theme removed)"
@@ -671,7 +671,7 @@ while IFS= read -r vault_path || [ -n "$vault_path" ]; do
 
   # Ensure theme files exist for this vault
   ensure_theme_scaffold "$vault_path"
-  THEME_DIR="$vault_path/.obsidian/themes/Omarchy"
+  THEME_DIR="$vault_path/.obsidian/themes/Myarchy"
 
   # Step 3: update theme.css
   if [ -f "$CURRENT_THEME_DIR/obsidian.css" ]; then

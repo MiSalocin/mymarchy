@@ -1,6 +1,6 @@
-source ~/.local/share/omarchy/default/bash/shell
-source ~/.local/share/omarchy/default/bash/aliases
-source ~/.local/share/omarchy/default/bash/functions
-source ~/.local/share/omarchy/default/bash/init
-source ~/.local/share/omarchy/default/bash/envs
-[[ $- == *i* ]] && bind -f ~/.local/share/omarchy/default/bash/inputrc
+source ~/.local/share/myarchy/default/bash/shell
+source ~/.local/share/myarchy/default/bash/aliases
+source ~/.local/share/myarchy/default/bash/functions
+source ~/.local/share/myarchy/default/bash/init
+source ~/.local/share/myarchy/default/bash/envs
+[[ $- == *i* ]] && bind -f ~/.local/share/myarchy/default/bash/inputrc

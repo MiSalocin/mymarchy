@@ -2,10 +2,10 @@
 
 set -e
 
-omarchy-update-time
-omarchy-update-keyring
-omarchy-update-available-reset
-omarchy-update-system-pkgs
-omarchy-migrate
-omarchy-hook post-update
-omarchy-update-restart
+myarchy-update-time
+myarchy-update-keyring
+myarchy-update-available-reset
+myarchy-update-system-pkgs
+myarchy-migrate
+myarchy-hook post-update
+myarchy-update-restart

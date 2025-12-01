@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set install mode to online since boot.sh is used for curl installations
-export OMARCHY_ONLINE_INSTALL=true
+export MYARCHY_ONLINE_INSTALL=true
 
 ansi_art='
  ▄███████████▄   ▄█   █▄    ▄███████   ▄███████   ▄███████   ▄█   █▄    ▄█   █▄
@@ -22,7 +22,7 @@ sudo pacman -Syu --noconfirm --needed git
 # Use custom repo if specified, otherwise default to basecamp/omarchy
 MYARCHY_REPO="${MYARCHY_REPO:-misalocin/myarchy}"
 
-echo -e "\nCloning Omarchy from: https://github.com/${MYARCHY_REPO}.git"
+echo -e "\nCloning Myarchy from: https://github.com/${MYARCHY_REPO}.git"
 rm -rf ~/.local/share/myarchy/
 git clone "https://github.com/${MYARCHY_REPO}.git" ~/.local/share/myarchy >/dev/null
 
@@ -36,4 +36,4 @@ if [[ $MYARCHY_REF != "master" ]]; then
 fi
 
 echo -e "\nInstallation starting..."
-source ~/.local/share/omarchy/install.sh
+source ~/.local/share/myarchy/install.sh

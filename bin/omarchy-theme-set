@@ -1,12 +1,12 @@
 #!/bin/bash
 
 if [[ -z $1 && $1 != "CNCLD" ]]; then
-  echo "Usage: omarchy-theme-set <theme-name>"
+  echo "Usage: myarchy-theme-set <theme-name>"
   exit 1
 fi
 
-THEMES_DIR="$HOME/.config/omarchy/themes/"
-CURRENT_THEME_DIR="$HOME/.config/omarchy/current/theme"
+THEMES_DIR="$HOME/.config/myarchy/themes/"
+CURRENT_THEME_DIR="$HOME/.config/myarchy/current/theme"
 
 THEME_NAME=$(echo "$1" | sed -E 's/<[^>]+>//g' | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
 THEME_PATH="$THEMES_DIR/$THEME_NAME"
@@ -21,24 +21,24 @@ fi
 ln -nsf "$THEME_PATH" "$CURRENT_THEME_DIR"
 
 # Change background with theme
-omarchy-theme-bg-next
+myarchy-theme-bg-next
 
 # Restart components to apply new theme
 if pgrep -x waybar >/dev/null; then
-  omarchy-restart-waybar
+  myarchy-restart-waybar
 fi
-omarchy-restart-swayosd
-omarchy-restart-terminal
+myarchy-restart-swayosd
+myarchy-restart-terminal
 hyprctl reload
 pkill -SIGUSR2 btop
 makoctl reload
 
 # Change gnome, browser, vscode, cursor themes
-omarchy-theme-set-gnome
-omarchy-theme-set-browser
-omarchy-theme-set-vscode
-omarchy-theme-set-cursor
-omarchy-theme-set-obsidian
+myarchy-theme-set-gnome
+myarchy-theme-set-browser
+myarchy-theme-set-vscode
+myarchy-theme-set-cursor
+myarchy-theme-set-obsidian
 
 # Call hook on theme set
-omarchy-hook theme-set "$THEME_NAME"
+myarchy-hook theme-set "$THEME_NAME"

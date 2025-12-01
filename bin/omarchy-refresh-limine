@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -f /boot/EFI/linux/omarchy_linux.efi ]] && [[ -f /boot/EFI/linux/$(cat /etc/machine-id)_linux.efi ]]; then
+if [[ -f /boot/EFI/linux/myarchy_linux.efi ]] && [[ -f /boot/EFI/linux/$(cat /etc/machine-id)_linux.efi ]]; then
   echo "Cleanup extra UKI"
   sudo rm -f /boot/EFI/Linux/$(cat /etc/machine-id)_linux.efi
 fi
@@ -12,7 +12,7 @@ sudo tee /boot/limine.conf <<EOF >/dev/null
 ### Read more at config document: https://github.com/limine-bootloader/limine/blob/trunk/CONFIG.md
 #timeout: 3
 default_entry: 2
-interface_branding: Omarchy Bootloader
+interface_branding: Myarchy Bootloader
 interface_branding_color: 2
 hash_mismatch_panic: no
 
