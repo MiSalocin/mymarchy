@@ -3,7 +3,7 @@
 
 # All the default Myarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
-source ~/.local/share/myarchy/default/bash/rc
+source ~/.local/share/myarchy/default/zsh/rc
 
 # Add your own exports, aliases, and functions here.
 #

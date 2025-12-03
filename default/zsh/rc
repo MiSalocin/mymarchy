@@ -1,0 +1,5 @@
+source ~/.local/share/myarchy/default/zsh/aliases
+source ~/.local/share/myarchy/default/zsh/functions
+source ~/.local/share/myarchy/default/zsh/init
+source ~/.local/share/myarchy/default/zsh/envs
+[[ $- == *i* ]] && bind -f ~/.local/share/myarchy/default/zsh/inputrc

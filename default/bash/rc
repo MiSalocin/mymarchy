@@ -1,6 +1,0 @@
-source ~/.local/share/myarchy/default/bash/shell
-source ~/.local/share/myarchy/default/bash/aliases
-source ~/.local/share/myarchy/default/bash/functions
-source ~/.local/share/myarchy/default/bash/init
-source ~/.local/share/myarchy/default/bash/envs
-[[ $- == *i* ]] && bind -f ~/.local/share/myarchy/default/bash/inputrc
