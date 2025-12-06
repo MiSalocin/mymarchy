@@ -14,7 +14,7 @@ run_logged $MYARCHY_INSTALL/config/mimetypes.sh
 run_logged $MYARCHY_INSTALL/config/localdb.sh
 run_logged $MYARCHY_INSTALL/config/walker-elephant.sh
 run_logged $MYARCHY_INSTALL/config/fast-shutdown.sh
-run_logged $MYARCHY_INSTALL/config/sudoless-asdcontrol.sh
+run_logged $MYARCHY_INSTALL/config/terminal.sh
 run_logged $MYARCHY_INSTALL/config/hardware/network.sh
 run_logged $MYARCHY_INSTALL/config/hardware/set-wireless-regdom.sh
 run_logged $MYARCHY_INSTALL/config/hardware/fix-fkeys.sh
@@ -25,4 +25,3 @@ run_logged $MYARCHY_INSTALL/config/hardware/ignore-power-button.sh
 run_logged $MYARCHY_INSTALL/config/hardware/nvidia.sh
 run_logged $MYARCHY_INSTALL/config/hardware/fix-f13-amd-audio-input.sh
 run_logged $MYARCHY_INSTALL/config/hardware/fix-bcm43xx.sh
-run_logged $MYARCHY_INSTALL/config/hardware/fix-surface-keyboard.sh

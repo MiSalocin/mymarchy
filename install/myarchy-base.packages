@@ -1,8 +1,6 @@
 # Myarchy core package list installed via install/packaging/base.sh
 # This file is also used by the ISO builder when determining needs
 
-avahi
-bash-completion
 bat
 bluetui
 brightnessctl
@@ -58,7 +56,6 @@ llvm
 luarocks
 mako
 man-db
-mariadb-libs
 mise
 mpv
 nautilus
@@ -77,7 +74,6 @@ playerctl
 plocate
 plymouth
 polkit-gnome
-postgresql-libs
 power-profiles-daemon
 python-gobject
 python-poetry-core

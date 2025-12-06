@@ -1,7 +1,0 @@
-#!/bin/bash
-
-myarchy-refresh-config hypr/autostart.conf
-myarchy-refresh-config hypr/bindings.conf
-myarchy-refresh-config hypr/input.conf
-myarchy-refresh-config hypr/looknfeel.conf
-myarchy-refresh-config hypr/hyprland.conf
