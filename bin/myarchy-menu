@@ -243,7 +243,6 @@ show_install_service_menu() {
   *Dropbox*) present_terminal myarchy-install-dropbox ;;
   *Tailscale*) present_terminal myarchy-install-tailscale ;;
   *Bitwarden*) install_and_launch "Bitwarden" "bitwarden bitwarden-cli" "bitwarden" ;;
-  *Chromium*) present_terminal myarchy-install-chromium-google-account ;;
   *) show_install_menu ;;
   esac
 }
