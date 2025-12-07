@@ -25,11 +25,11 @@ This fork is based on [jolleyDesign/lomarchy](https://github.com/jolleyDesign/lo
   - Spotify
   - Wayfreeze
 - Set [oh-my-zsh](https://ohmyz.sh/) with oh-my-zsh as default terminal
-- Added [Telescope](https://github.com/nvim-telescope/telescope.nvim) and [3rd/image](https://github.com/3rd/image.nvim)
+- Added [Telescope](https://github.com/nvim-telescope/telescope.nvim) and [3rd/image](https://github.com/3rd/image.nvim) for neovim
 - Made the themes more rounded and removed most sharp edges
 - Rebranded (totally based on omarchy, for now)
 
-I'm also trying to remove, or, at least, decrease the number of scripts from bin and also rename the ones migration ones.
+I'm also trying to remove, or, at least, decrease the number of scripts from bin and also rename the migration ones.
 
 
 ## License
