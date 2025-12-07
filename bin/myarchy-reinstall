@@ -11,7 +11,7 @@ echo -e "This will reinstall all the default Myarchy packages and reset all defa
 
 if gum confirm "Are you sure you want to reinstall and lose all config changes?"; then
   echo "Resetting Myarchy repository"
-  git clone "https://github.com/basecamp/myarchy.git" ~/.local/share/myarchy-new >/dev/null
+  git clone "https://github.com/misalocin/myarchy.git" ~/.local/share/myarchy-new >/dev/null
   rm -rf $MYARCHY_PATH
   mv ~/.local/share/myarchy-new $MYARCHY_PATH
 
@@ -21,13 +21,14 @@ if gum confirm "Are you sure you want to reinstall and lose all config changes?"
 
   echo "Resetting all Myarchy configs"
   cp -R ~/.local/share/myarchy/config/* ~/.config/
-  cp ~/.local/share/myarchy/default/bashrc ~/.bashrc
-  echo '[[ -f ~/.bashrc ]] && . ~/.bashrc' | tee ~/.bash_profile >/dev/null
+  cp ~/.local/share/myarchy/default/zshrc ~/.zshrc
+  echo '[[ -f ~/.zshrc ]] && . ~/.zshrc' | tee ~/.zsh_profile >/dev/null
 
   $(bash $MYARCHY_PATH/install/config/theme.sh)
   $(bash $MYARCHY_PATH/install/config/git.sh)
+  $(bash $MYARCHY_PATH/install/config/nvim.sh)
+  $(bash $MYARCHY_PATH/install/config/terminal.sh)
 
   myarchy-refresh-limine
   myarchy-refresh-plymouth
-  myarchy-nvim-setup
 fi

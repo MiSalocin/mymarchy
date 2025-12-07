@@ -14,6 +14,7 @@ This fork is based on [jolleyDesign/lomarchy](https://github.com/jolleyDesign/lo
   - Chromium and webapps
   - Docker and lazydocker
   - Kdenlive
+  - Obsidian
   - Signal
   - Typora
   - Xournal

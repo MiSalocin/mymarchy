@@ -4,7 +4,7 @@ if [ -f /etc/systemd/system/myarchy-seamless-login.service ]; then
   cat <<EOF | sudo tee /etc/systemd/system/myarchy-seamless-login.service
 [Unit]
 Description=Myarchy Seamless Auto-Login
-Documentation=https://github.com/basecamp/myarchy
+Documentation=https://github.com/basecamp/omarchy
 Conflicts=getty@tty1.service
 After=systemd-user-sessions.service getty@tty1.service plymouth-quit.service systemd-logind.service
 PartOf=graphical.target

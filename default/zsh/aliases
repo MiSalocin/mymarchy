@@ -21,6 +21,12 @@ if command -v zoxide &> /dev/null; then
   }
 fi
 
+if command -v fzf &> /dev/null; then
+  if command -v bat &> /dev/null; then
+    alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
+  fi
+fi
+
 open() {
   xdg-open "$@" >/dev/null 2>&1 &
 }
