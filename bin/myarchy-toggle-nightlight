@@ -19,12 +19,31 @@ restart_nightlighted_waybar() {
   fi
 }
 
-if [[ "$CURRENT_TEMP" == "$OFF_TEMP" ]]; then
-  hyprctl hyprsunset temperature $ON_TEMP
-  notify-send "  Nightlight screen temperature"
+# Check if an argument was passed
+if [[ -n "$1" ]]; then
+  # Argument provided: adjust temperature by the given amount
+  ADJUSTMENT=$1
+  NEW_TEMP=$((CURRENT_TEMP + ADJUSTMENT))
+
+  # Clamp temperature to reasonable bounds (1000-10000K)
+  if [[ $NEW_TEMP -lt 1000 ]]; then
+    NEW_TEMP=1000
+  elif [[ $NEW_TEMP -gt 10000 ]]; then
+    NEW_TEMP=10000
+  fi
+
+  hyprctl hyprsunset temperature $NEW_TEMP
+  notify-send -h string:x-canonical-private-synchronous:hyprsunset "🌡️ Temperature adjusted" "New temperature: ${NEW_TEMP}K"
   restart_nightlighted_waybar
 else
-  hyprctl hyprsunset temperature $OFF_TEMP
-  notify-send "   Daylight screen temperature"
-  restart_nightlighted_waybar
+  # No argument: toggle between ON and OFF temperatures
+  if [[ "$CURRENT_TEMP" == "$OFF_TEMP" ]]; then
+    hyprctl hyprsunset temperature $ON_TEMP
+    notify-send -h string:x-canonical-private-synchronous:hyprsunset "🌙 Nightlight screen temperature"
+    restart_nightlighted_waybar
+  else
+    hyprctl hyprsunset temperature $OFF_TEMP
+    notify-send -h string:x-canonical-private-synchronous:hyprsunset "☀️  Daylight screen temperature"
+    restart_nightlighted_waybar
+  fi
 fi
