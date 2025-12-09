@@ -1,6 +1,12 @@
 # If not running interactively, don't do anything (leave this at the top of this file)
 [[ $- != *i* ]] && return
 
+if [[ -d /usr/share/zsh/plugins ]]; then
+  for plugin in /usr/share/zsh/plugins/*/*.plugin.zsh; do
+    [[ -f "$plugin" ]] && source "$plugin"
+  done
+fi
+
 # All the default Myarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
 source ~/.local/share/myarchy/default/zsh/rc

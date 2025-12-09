@@ -33,12 +33,10 @@ hyprctl reload
 pkill -SIGUSR2 btop
 makoctl reload
 
-# Change gnome, browser, vscode, cursor themes
+# Change gnome, vscode, cursor themes
 myarchy-theme-set-gnome
-myarchy-theme-set-browser
 myarchy-theme-set-vscode
 myarchy-theme-set-cursor
-myarchy-theme-set-obsidian
 
 # Call hook on theme set
 myarchy-hook theme-set "$THEME_NAME"

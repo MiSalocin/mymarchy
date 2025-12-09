@@ -53,7 +53,6 @@ libyaml
 libqalculate
 libreoffice-fresh
 llvm
-localsend
 luarocks
 mako
 man-db
@@ -109,4 +108,7 @@ xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xmlstarlet
 zsh
+zsh-autocomplete
+zsh-autosuggestions
+zsh-syntax-highlighting
 zoxide
