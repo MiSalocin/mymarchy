@@ -9,7 +9,7 @@ sudo chsh -s "$(which zsh)" "$USER"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended --skip-chsh --keep-zshrc
 
 # Move .oh-my-zsh
-[[ -d "$HOME/.oh-my-zsh" ]] && rm -rf "$HOME/.oh-my-zsh"
+[[ -d "$HOME/.local/share/oh-my-zsh" ]] && rm -rf "$HOME/.local/share/oh-my-zsh"
 mv "$HOME/.oh-my-zsh" "$HOME/.local/share/oh-my-zsh"
 
 
